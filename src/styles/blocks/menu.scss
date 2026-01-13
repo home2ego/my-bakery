@@ -1,0 +1,28 @@
+@use "../utils/vars" as *;
+@use "../utils/mixins" as *;
+
+.menu {
+  height: 100vh;
+  background-color: $color-lightBlue;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__top-actions {
+    margin-bottom: 132px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    align-items: center;
+  }
+
+  &__item:last-child {
+    display: inline-flex;
+    column-gap: 4px;
+    align-items: center;
+  }
+}

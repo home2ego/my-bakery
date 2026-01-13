@@ -1,0 +1,87 @@
+@use "../utils/vars" as *;
+@use "../utils/mixins" as *;
+@use "../utils/extends" as *;
+
+.about {
+  &__top-info {
+    @media (min-width: 768px) {
+      @include useGrid(8, 0, 24px);
+
+      margin-bottom: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__title {
+    @extend %title-size;
+
+    margin-bottom: 32px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__info {
+    margin-bottom: 64px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    @include onTablet {
+      @include useGrid(8, 80px, 24px);
+    }
+  }
+
+  &__statistics {
+    &-number {
+      margin-bottom: 8px;
+
+      font-size: 96px;
+      line-height: 82px;
+      text-transform: uppercase;
+      letter-spacing: -0.05em;
+    }
+
+    &-title {
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: 24px;
+      color: $color-grey;
+    }
+  }
+
+  &__statistics:not(:last-child) {
+    margin-bottom: 48px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    z-index: -1;
+    bottom: 30%;
+
+    width: 100%;
+    max-width: $mobile-max-size;
+
+    object-fit: contain;
+
+    @include onTablet {
+      top: 50%;
+      bottom: 0;
+      transform: translateY(-50%);
+      max-width: none;
+    }
+  }
+}

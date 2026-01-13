@@ -1,0 +1,13 @@
+.navbar {
+  &__list {
+    display: flex;
+    column-gap: 64px;
+    align-items: center;
+  }
+
+  &__item:last-child {
+    display: inline-flex;
+    column-gap: 4px;
+    align-items: center;
+  }
+}

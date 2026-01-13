@@ -1,0 +1,63 @@
+@use "../utils/vars" as *;
+@use "../utils/mixins" as *;
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  font-weight: 500;
+  line-height: 16px;
+  color: $color-accentOrange;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+
+  &__image {
+    margin-right: 4px;
+  }
+
+  &--primary {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 16px 0;
+    border: 2px solid $color-accentOrange;
+    border-radius: 32px;
+
+    transition: all 0.25s;
+
+    @include onTablet {
+      max-width: none;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 20%;
+    }
+
+    &:hover {
+      color: $color-white;
+      background-color: $color-accentOrange;
+    }
+
+    &:active {
+      border-color: $color-darkOrange;
+      background-color: $color-darkOrange;
+      transition: none;
+    }
+  }
+
+  &--order {
+    width: max-content;
+    padding: 4px 4px 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.25s;
+
+    &:hover {
+      border-color: $color-accentOrange;
+    }
+  }
+}

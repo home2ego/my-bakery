@@ -1,0 +1,10 @@
+@use "../utils/vars" as *;
+@use "../utils/mixins" as *;
+
+.icon {
+  transition: transform 0.25s;
+
+  &:hover {
+    transform: scale(1.15);
+  }
+}

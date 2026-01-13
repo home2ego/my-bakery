@@ -1,0 +1,40 @@
+@use "../utils/vars" as *;
+@use "../utils/mixins" as *;
+
+.link {
+  position: relative;
+  padding: 8px 0;
+  color: inherit;
+  text-decoration: none;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    transform-origin: bottom;
+    scale: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: $color-accentOrange;
+
+    transition: scale 0.25s;
+  }
+
+  &:hover::before {
+    scale: 1;
+  }
+
+  &--is-active {
+    position: relative;
+    font-weight: 500;
+    color: $color-accentOrange;
+    text-transform: uppercase;
+
+    &::before {
+      background-color: $color-black;
+    }
+  }
+}

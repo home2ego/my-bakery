@@ -1,0 +1,67 @@
+@use "../utils/vars" as *;
+@use "../utils/mixins" as *;
+
+.page {
+  scroll-behavior: smooth;
+
+  font-family: system-ui, sans-serif;
+  line-height: 24px;
+  color: $color-black;
+  letter-spacing: -0.01em;
+
+  background-color: $color-lightBlue;
+
+  &:has(.menu:target) {
+    overflow-y: hidden;
+  }
+
+  &__header {
+    margin-bottom: 104px;
+
+    @include onTablet {
+      margin-bottom: 228px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 152px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    transform: translateX(-100%);
+
+    width: 100%;
+
+    transition: transform 0.25s linear;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__products {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 178px;
+    }
+  }
+
+  &__about {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 150px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 350px;
+    }
+  }
+}
